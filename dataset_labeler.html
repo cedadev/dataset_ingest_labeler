@@ -1,0 +1,278 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dataset Labeler</title>
+
+    <script
+            src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+
+    <!-- Bootstrap Core
+CSS -->
+    <link rel="stylesheet" href="http://artefacts.ceda.ac.uk/themes/orgtheme_ceda_serv/0.1/4/flatly/bootstrap.css" media="screen">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="http://artefacts.ceda.ac.uk/themes/orgtheme_ceda_serv/0.1/_assets/css/custom.min.css">
+    <link rel="stylesheet" href="http://artefacts.ceda.ac.uk/themes/orgtheme_ceda_serv/0.1/_assets/css/org-custom.css">
+
+    <link href="/static/fwtheme_django/css/fw-custom.css" rel="stylesheet">
+    <!-- Custom Fonts -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+
+</head>
+
+<body>
+<div class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary">
+    <div class="container">
+
+        <a href="/" class="navbar-brand">
+            <img src="http://artefacts.ceda.ac.uk/themes/orgtheme_ceda_serv/0.1/_assets/img/ceda_archive_logo_transp_white_3_h80.png" alt="CEDA logo">
+        </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="http://arrivals.ceda.ac.uk">Deposit</a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</div>
+
+
+<div class="container">
+    <button onclick="download();">Download</button>
+
+    <div id="title_help" class="alert alert-primary tog">
+        <h4>Title <i class="fas fa-info-circle"></i></h4>
+        <div>
+            <ul><li>The title should be understandable, brief and simple</li>
+                <li>Acronyms and abbreviations must be explained i.e. Full Name (ACRONYM)</li>
+                <li>The title should describe the data in question, NOT the project/activity which produced it</li>
+                <li>The title should be concise but as informative as possible, providing the reader with an indication of the
+                    content of the data and (where appropriate) its temporal and spatial coverage</li>
+                <li>You might consider a title that answers the “what, where, when” questions about the resource.
+                    For example: “Biogeochemical Ocean Flux Study (BOFS) North Atlantic Data Set (1989-1991)”</li>
+            </ul></div>
+    </div>
+     <textarea id="title" class="form-control" style="min-width: 100%" rows="4"></textarea>
+
+    <div id="description_help" class="alert alert-primary tog">
+        <h4>Description</h4>
+        <div><ul><li>should describe the dataset in plain language for a non-expert user (first year undergraduate level)</li>
+            <li>first few sentences should summarise the contents of the resource</li>
+            <li>specialist terms should be explained in full</li>
+            <li>Acronyms and abbreviations must be explained i.e. Full Name (ACRONYM)</li>
+            <li>should describe the dataset in question, NOT the project/activity which produced it.</li></ul>
+
+            <p>Some details of the activities which produced the resource may be pertinent, in which case they should be included.
+                To help organise thinking, it is recommended that the author may like to use the following structure for the summary: </p>
+
+            <ol>
+                <li>What - A description of what has been recorded and what form the data takes.</li>
+                <li>Where - A description of the spatial extent.  This could include, gridded/scattered data; even/very variable coverage</li>
+                <li>When - A description of the temporal coverage (e.g. the period over which data were collected)</li>
+                <li>How - A brief description of methods and instrumentation used</li>
+                <li>Why - For what purpose was the data collected?</li>
+                <li>Who - The party/parties responsible for the collection and interpretation of data.</li>
+                <li>Completeness - Are any data absent from the dataset? Explain which data are included or excluded and why.
+                </li></ol>
+        </div>
+    </div>
+
+    <textarea id="description" class="form-control" style="min-width: 100%" rows="20">
+        description: |
+    Large data sets created within the MaRIUS project (Managing the Risks, Impacts and Uncertainties of drought and water Scarcity).
+    Three time periods are covered: historical baseline (BS: 1900-2006), near-future (NF: 2020-2049) and far-future (FF: 2070-2099), whereby the RCP8.5 is assumed for future time slices. The 30-year baseline to which future time slices should be compared to are years 2075-2004 of the historical baseline, since oceanic variability in future time slices is based on these years.
+    One set of 100 time series is available for the historical baseline, while 5 sets of about 85-100 time series are available for each future time slice. The five sets sample climate model uncertainty by sampling a range of sea surface temperature warming patterns as follows: nf and ff use the median warming pattern of CMIP5 climate models. The four others sets are called nf-pYYz (near future) and ff-pYYz (far future) whereby 'YY' stands for the percentile of global mean SST warming (YY=10 or 90) and 'z' stands for the North Atlantic SST gradient (z=n for minimum, z=x for maximum). All natural forcings (e.g., volcanoes) in the future time slices are replications of years 1975-2004, while anthropogenic forcings (e.g., CO2 concentrations) follow the high-emission scenario RCP8.5.
+    The time series were created from single-year simulations that have been stitched together while ensuring continuity in the slowly-evolving variability (see Guillod et al., Hydrol. Earth Syst. Sci., 2017 for details). Therefore, for each set (e.g., near_future_p10n), a 'stitching table' is provided alongside with data from individual yearly simulations, which contains the simulation ID ('umid') for each year and each individual time series (i.e., each column within the table list the umid for each year of the time series).
+    Data are gridded NetCDF V3 files, provided on a rotated longitude-latitude grid at a 0.22 degree resolution (European CORDEX grid) over a domain encompassing the United Kingdom. A subset of variables are available at daily, 5-days, and monthly temporal resolutions, based on a calendar with 360 days a year (30 days per month). Included are only data from HadRM3P, the regional climate model within weather@home2. After unpacking yearly *tgz files for a given time slice and scenario (e.g., near_future_p10n) within a directory with the relevant name, the data are structured as follows:
+    timeslice / year / umid / temporalResolution / WAH_umid_variable_temporalResolution_g2_year.nc
+    where:
+    - The temporal resolution ('temporalResolution') available depends on the variable, but it can be 'daily', 'monthly', or '5days'
+    - 'timeslice' can be one of: 'baseline', 'near_future', 'near_future_p10n', 'near_future_p10x', 'near_future_p90n', 'near_future_p90x', ‘far_future’, 'far_future_p10n', 'far_future_p10x', 'far_future_p90n', 'far_future_p90x'.
+    - 'year' is the year of the simulation and data.
+    - 'umid' is the ID of the simulation, to be read from the stitching table.
+    - 'variable' is the variable, following CMOR conventions (see also Table 3 in Guillod et al., Hydrol. Earth Syst. Sci., 2017).
+    Further details about the data, including validation of the climate time series and analyses of some changes in the future projections, can be found in the PDF documentation as well as in Guillod et al., 2017b. A detailed validation of the model (weather@home2) can be found in Guillod et al., 2017a (see list of references below).
+    </textarea>
+
+    <div id="authors_help" class="alert alert-primary tog">
+        <h4>Authors</h4>
+        <div>
+            <p>A list of authors. Organisations can be specified using a lastname only.</p>
+        </div>
+    </div>
+
+    <div id="authors">
+
+        <div class="row template" style="display: none">
+            <div class="col-sm"><input class="form-control" type="text"/></div>
+            <div class="col-sm"><input class="form-control" type="text"/></div>
+        </div>
+        <div class="row">
+            <div class="col-sm">Firstname</div>
+            <div class="col-sm">Surname</div>
+        </div>
+    </div>
+    <button class="form-control" onclick="add_row('authors');">Add an author</button>
+
+
+    <div id="coverage_help" class="alert alert-primary tog">
+        <h4>Coverage</h4>
+        <div><p>Where is the data? Lat long bounding box.</p>
+        </div>
+    </div>
+
+   <div id="coverage">
+
+        <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-1"><input id="north" class="form-control" type="text"/>North</div>
+        </div>
+        <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-1">West<input id="west" class="form-control" type="text"/></div>
+            <div class="col-sm-1"></div>
+            <div class="col-sm-1"><input id="east" class="form-control" type="text"/>East</div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-1"><input id="south" class="form-control" type="text"/>South</div>
+        </div>
+
+    </div>
+
+
+    <div id="time_range_help" class="alert alert-primary tog">
+        <h4>Temporal range</h4>
+        <div>
+            <p>Whats the time range that the data covers. YYYY-MM-DD.</p>
+        </div>
+    </div>
+
+       <div id="time_range">
+
+        <div class="row">
+            <div class="col-sm-2 text-right">Start date</div>
+            <div class="col-sm-2"><input id="start" class="form-control" type="text"/></div>
+            <div class="col-sm-1 text-center"><i class="fas fa-arrow-right"></i></div>
+            <div class="col-sm-2"><input id="end" class="form-control" type="text"/> </div>
+            <div class="col-sm-1">End date</div>
+        </div>
+
+    </div>
+
+
+    <div id="lineage_help" class="alert alert-primary tog">
+        <h4>Lineage</h4>
+        <div>
+
+        <ul>
+            <li>should describe how the data resource came into existence.</li>
+            <li>should describe the stages the resource has passed through before arriving at the data centre (to the best of the metadata authors knowledge).</li>
+        </ul>
+            </div>
+    </div>
+     <textarea id="lineage" class="form-control" style="min-width: 100%" rows="4"></textarea>
+
+
+    <div id="quality_help" class="alert alert-primary tog">
+        <h4>Quality statment</h4>
+        <div>
+            <p>Any quality standards that were used in the collection of this data.</p>
+        </div>
+    </div>
+     <textarea id="quality" class="form-control" style="min-width: 100%" rows="4"></textarea>
+
+
+    <div id="docs_help" class="alert alert-primary tog">
+            <h4>Relevent online documentation sources</h4>
+            <div>
+                Any documentation.
+            </div>
+    </div>
+
+
+
+    <div id="docs">
+
+        <div class="row template" style="display: none">
+            <div class="col-lg"><input class="form-control" type="text"/></div>
+            <div class="col-md"><input class="form-control" type="text"/></div>
+        </div>
+        <div class="row">
+            <div class="col-sm">Title</div>
+            <div class="col-sm">url</div>
+        </div>
+    </div>
+    <button class="form-control" onclick="add_row('docs');">Add a document</button>
+
+
+    <div id="project_help" class="alert alert-primary tog">
+        <h4>Project description</h4>
+        <div>
+            # The title should include an acronym if possible.
+        # This could include: what the project is about, project aims and objectives, why the research is important, when did the project start/end etc.
+        </div>
+    </div>
+
+    Project title
+    <textarea id="project_title" class="form-control" style="min-width: 100%" rows="4"></textarea>
+    <div class="col-sm-2">Catalogue URL</div>
+    <div class="col-sm-8"><input id="project_cat_url" class="form-control" type="text"/> </div>
+    Project title
+    <textarea id="project_description" class="form-control" style="min-width: 100%" rows="10"></textarea>
+        <div class="row template" style="display: none">
+            <div class="col-sm">PI firstname <input class="form-control" type="text"/></div>
+            <div class="col-sm">surname<input class="form-control" type="text"/></div>
+        </div>
+    <div class="col-sm-2">Funder</div>
+    <div class="col-sm-8"><input id="funder" class="form-control" type="text"/> </div>
+    <div class="col-sm-2">Grant number</div>
+    <div class="col-sm-8"><input id="grant_number" class="form-control" type="text"/> </div>
+    
+
+    <div id="instrument_help" class="alert alert-primary tog">
+        <h4>Instruments</h4>
+        <div>
+            # List any instruments used.
+        # If your data is collected via an instrument, please check the CEDA instrument record list here:
+        # http://catalogue.ceda.ac.uk/listings/instr/
+            </div>
+    </div>
+
+    <div id="comp_help" class="alert alert-primary tog">
+        <h4>Computation</h4>
+
+        <div>
+            Desctription of model used.
+        </div>
+    </div>
+
+    computations:
+    name: Weather@Home2 climate simulation environment uses the HadAM3P Atmosphere-only General Circulation Model (AGCM) with an embedded Regional Climate Model (RCM)
+    description: |
+    The Weather@Home2 climate simulation environment uses the HadAM3P Atmosphere-only General Circulation Model (AGCM)
+    with an embedded Regional Climate Model (RCM) variant, HadRM3P, both from the UK Met Office Hadley Centre. Unlike the original
+    Weather@Home, Weather@Home2 uses a more sophisticated land-surface model, MOSES2.
+
+
+    <script src="http://artefacts.ceda.ac.uk/themes/orgtheme/0.1/_vendor/jquery/dist/jquery.min.js"></script>
+    <script src="http://artefacts.ceda.ac.uk/themes/orgtheme/0.1/_vendor/popper.js/dist/umd/popper.min.js"></script>
+    <script src="http://artefacts.ceda.ac.uk/themes/orgtheme/0.1/_vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="http://artefacts.ceda.ac.uk/themes/orgtheme/0.1/_assets/js/custom.js"></script>
+    <script src="labeler.js"></script>
+</div>
+
+</body>
+</html>
