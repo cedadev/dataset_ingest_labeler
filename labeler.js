@@ -25,9 +25,21 @@ function make_download() {
     for (var i=2; i < docs.length; i += 2) {
         docs_list.push({"title": docs[i].value, "url": docs[i+1].value});
     }
+     var project_cat_url = $('#project_cat_url').val();
+    var project_title = $('#project_title').val();
+    var project_description = $('#project_description').val();
+    var project_pi_firstname = $('#project_pi_firstname').val();
+    var project_pi_surname = $('#project_pi_surname').val();
+    var funder = $('#funder').val();
+    var grant_number = $('#grant_number').val();
+    var project = {"catalogue_url": project_cat_url, "title": project_title,
+        "description": project_description,
+        "PI": {"firstname": project_pi_firstname, "lastname": project_pi_surname},
+        "funder": funder, "grant_number": grant_number};
+
    return {"title": title, "description": description, "authors": authors_list,
     "bbox": bbox, "time_range": time_range, "lineage": lineage, "quality": quality,
-    "docs": docs_list}
+    "docs": docs_list, "project": project};
 
 }
 
