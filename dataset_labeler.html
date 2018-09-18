@@ -55,7 +55,7 @@ CSS -->
                     For example: “Biogeochemical Ocean Flux Study (BOFS) North Atlantic Data Set (1989-1991)”</li>
             </ul></div>
     </div>
-     <textarea id="title" class="form-control" style="min-width: 100%" rows="4"></textarea>
+     <textarea id="title" class="form-control mb-2" style="min-width: 100%" rows="4"></textarea>
 
     <div id="description_help" class="alert alert-primary tog">
         <h4>Description</h4>
@@ -111,7 +111,7 @@ CSS -->
         </div>
     </div>
 
-   <div id="coverage">
+   <div id="coverage" class="mb-2">
 
         <div class="row">
             <div class="col-sm-2"></div>
@@ -138,7 +138,7 @@ CSS -->
         </div>
     </div>
 
-       <div id="time_range">
+       <div id="time_range" class="mb-2">
 
         <div class="row">
             <div class="col-sm-2 text-right">Start date</div>
@@ -161,7 +161,7 @@ CSS -->
         </ul>
             </div>
     </div>
-     <textarea id="lineage" class="form-control" style="min-width: 100%" rows="4"></textarea>
+     <textarea id="lineage" class="form-control mb-2" style="min-width: 100%" rows="4"></textarea>
 
 
     <div id="quality_help" class="alert alert-primary tog">
@@ -170,7 +170,7 @@ CSS -->
             <p>Any quality standards that were used in the collection of this data.</p>
         </div>
     </div>
-     <textarea id="quality" class="form-control" style="min-width: 100%" rows="4"></textarea>
+     <textarea id="quality" class="form-control mb-2" style="min-width: 100%" rows="4"></textarea>
 
 
     <div id="docs_help" class="alert alert-primary tog">
@@ -235,20 +235,15 @@ CSS -->
             </div>
     </div>
 
-    <div id="instruments">
-
-        <div class="row template mb-2" style="display: none">
-            <div class="col-md"><input class="form-control" type="text"/></div>
-            <div class="col-md"><input class="form-control" type="text"/></div>
-            <div class="col-lg"><input class="form-control" type="text"/></div>
-        </div>
-        <div class="row">
-            <div class="col-sm">Title</div>
-            <div class="col-sm">Description</div>
-            <div class="col-sm">Catalogue URL</div>
-        </div>
+    <div class="row mb-2">
+        <div class="col-sm-12">Catalogue URL - Is this instrument already recorded in the
+        <a href="http://catalogue.ceda.ac.uk/?q=&sort_by=relevance&record_types=Instrument">catalogue</a>? </div>
+        <div class="col-sm-12"><input id="instrument_cat_url" class="form-control" type="text"/> </div>
     </div>
-    <button class="form-control mb-2 btn btn-secondary" onclick="add_row('instruments');">Add an instrument</button>
+    Instrument title
+    <textarea id="instrument_title" class="form-control mb-2" style="min-width: 100%" rows="4"></textarea>
+    Instrument description
+    <textarea id="instrument_description" class="form-control mb-2" style="min-width: 100%" rows="10"></textarea>
 
 
     <div id="comp_help" class="alert alert-primary tog">
@@ -259,12 +254,15 @@ CSS -->
         </div>
     </div>
 
-
-    Title
-    <div class="col-sm-12"><input id="computation_title" class="form-control" type="text"/> </div>
-    Project description
+    <div class="row mb-2">
+        <div class="col-sm-12">Catalogue URL - Is this model or process already recorded in the
+        <a href="http://catalogue.ceda.ac.uk/?q=&sort_by=relevance&record_types=Computation">catalogue</a>? </div>
+        <div class="col-sm-12"><input id="computation_cat_url" class="form-control" type="text"/> </div>
+    </div>
+    Instrument title
+    <textarea id="computation_title" class="form-control mb-2" style="min-width: 100%" rows="4"></textarea>
+    Instrument description
     <textarea id="computation_description" class="form-control mb-2" style="min-width: 100%" rows="10"></textarea>
-
 
 
     <script src="http://artefacts.ceda.ac.uk/themes/orgtheme/0.1/_vendor/jquery/dist/jquery.min.js"></script>
