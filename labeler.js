@@ -4,6 +4,7 @@
 
 
 function make_download() {
+    //pull all the form fields into a single json object
     var title = $('#title').val();
     var description = $('#description').val();
     var authors = $('#authors input');
@@ -37,9 +38,22 @@ function make_download() {
         "PI": {"firstname": project_pi_firstname, "lastname": project_pi_surname},
         "funder": funder, "grant_number": grant_number};
 
+    var instrument_cat_url = $('#instrument_cat_url').val();
+    var instrument_title = $('#instrument_title').val();
+    var instrument_description = $('#instrument_description').val();
+    var instrument = {"catalogue_url": instrument_cat_url, "title": instrument_title,
+        "description": instrument_description};
+
+    var computation_cat_url = $('#computation_cat_url').val();
+    var computation_title = $('#computation_title').val();
+    var computation_description = $('#computation_description').val();
+    var computation = {"catalogue_url": computation_cat_url, "title": computation_title,
+        "description": computation_description};
+
+
    return {"title": title, "description": description, "authors": authors_list,
     "bbox": bbox, "time_range": time_range, "lineage": lineage, "quality": quality,
-    "docs": docs_list, "project": project};
+    "docs": docs_list, "project": project, "instrument": instrument, "computation": computation};
 
 }
 
