@@ -35,7 +35,7 @@ function make_download() {
     var grant_number = $('#grant_number').val();
     var project = {"catalogue_url": project_cat_url, "title": project_title,
         "description": project_description,
-        "PI": {"firstname": project_pi_firstname, "lastname": project_pi_surname},
+        "PI": {"firstname": project_pi_firstname, "surname": project_pi_surname},
         "funder": funder, "grant_number": grant_number};
 
     var instrument_cat_url = $('#instrument_cat_url').val();

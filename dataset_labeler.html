@@ -57,7 +57,7 @@ CSS -->
      <textarea id="title" class="form-control mb-2" style="min-width: 100%" rows="4"></textarea>
 
     <div id="description_help" class="alert alert-primary tog">
-        <h4>Description</h4>
+        <h4>Description <i class="fas fa-info-circle"></i></h4>
         <div><ul><li>should describe the dataset in plain language for a non-expert user (first year undergraduate level)</li>
             <li>first few sentences should summarise the contents of the resource</li>
             <li>specialist terms should be explained in full</li>
@@ -84,7 +84,7 @@ CSS -->
     </textarea>
 
     <div id="authors_help" class="alert alert-primary tog">
-        <h4>Authors</h4>
+        <h4>Authors <i class="fas fa-info-circle"></i></h4>
         <div>
             <p>A list of authors. Organisations can be specified using a lastname only.</p>
         </div>
@@ -105,7 +105,7 @@ CSS -->
 
 
     <div id="coverage_help" class="alert alert-primary tog">
-        <h4>Coverage</h4>
+        <h4>Coverage <i class="fas fa-info-circle"></i></h4>
         <div><p>Where is the data? Lat long bounding box.</p>
         </div>
     </div>
@@ -131,7 +131,7 @@ CSS -->
 
 
     <div id="time_range_help" class="alert alert-primary tog">
-        <h4>Temporal range</h4>
+        <h4>Temporal range <i class="fas fa-info-circle"></i></h4>
         <div>
             <p>Whats the time range that the data covers. YYYY-MM-DD.</p>
         </div>
@@ -151,7 +151,7 @@ CSS -->
 
 
     <div id="lineage_help" class="alert alert-primary tog">
-        <h4>Lineage</h4>
+        <h4>Lineage <i class="fas fa-info-circle"></i></h4>
         <div>
 
         <ul>
@@ -164,7 +164,7 @@ CSS -->
 
 
     <div id="quality_help" class="alert alert-primary tog">
-        <h4>Quality statment</h4>
+        <h4>Quality statment <i class="fas fa-info-circle"></i></h4>
         <div>
             <p>Any quality standards that were used in the collection of this data.</p>
         </div>
@@ -173,7 +173,7 @@ CSS -->
 
 
     <div id="docs_help" class="alert alert-primary tog">
-            <h4>Relevent online documentation sources</h4>
+            <h4>Relevent online documentation sources <i class="fas fa-info-circle"></i></h4>
             <div>
                 Any documentation.
             </div>
@@ -196,7 +196,7 @@ CSS -->
 
 
     <div id="project_help" class="alert alert-primary tog">
-        <h4>Project description</h4>
+        <h4>Project description <i class="fas fa-info-circle"></i></h4>
         <div>The title should include an acronym if possible. This could include: what the project is about,
             project aims and objectives, why the research is important, when did the project start/end etc.
         </div>
@@ -226,8 +226,8 @@ CSS -->
     
 
     <div id="instrument_help" class="alert alert-primary tog">
-        <h4>Instruments</h4>
-        <div>List of instruments used.
+        <h4>Instruments <i class="fas fa-info-circle"></i></h4>
+        <div>Instrument used to gather the data.
         If your data is collected via an instrument, please check the
             <a href="http://catalogue.ceda.ac.uk/?q=&sort_by=relevance&record_types=Instrument">catalogue</a>
             to see if there is already a record.
@@ -246,10 +246,13 @@ CSS -->
 
 
     <div id="comp_help" class="alert alert-primary tog">
-        <h4>Computation</h4>
+        <h4>Computation <i class="fas fa-info-circle"></i></h4>
 
         <div>
-            Desctription of model used.
+            If the data is the result of a computer model then desctription of model used. If you can find a record
+            already in the
+            <a href="http://catalogue.ceda.ac.uk/?q=&sort_by=relevance&record_types=Instrument">catalogue</a> then we
+            can link your data to that.
         </div>
     </div>
 
@@ -258,16 +261,15 @@ CSS -->
         <a href="http://catalogue.ceda.ac.uk/?q=&sort_by=relevance&record_types=Computation">catalogue</a>? </div>
         <div class="col-sm-12"><input id="computation_cat_url" class="form-control" type="text"/> </div>
     </div>
-    Instrument title
+    Computation title
     <textarea id="computation_title" class="form-control mb-2" style="min-width: 100%" rows="4"></textarea>
-    Instrument description
+    Computation description
     <textarea id="computation_description" class="form-control mb-2" style="min-width: 100%" rows="10"></textarea>
 
     <div class="row">
         <div class="col-md"><button class="btn btn-lg btn-success btn-block mb-2" onclick="download();">Download metadata file
             <i class="fas fa-download"></i></button></div>
     </div>
-
 
 
     <script src="http://artefacts.ceda.ac.uk/themes/orgtheme/0.1/_vendor/jquery/dist/jquery.min.js"></script>
